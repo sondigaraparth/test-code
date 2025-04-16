@@ -1,0 +1,8 @@
+<h1>Your Posts</h1>
+
+<%= render "form", post: @post %>
+
+<div id="posts">
+  <%= turbo_stream_from current_user %>
+  <%= render @posts %>
+</div>
