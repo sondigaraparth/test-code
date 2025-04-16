@@ -1,0 +1,8 @@
+<turbo-frame id="post_<%= post.id %>">
+  <div class="post border p-4 mb-2">
+    <h3><%= post.title %></h3>
+    <p><%= post.content %></p>
+    <%= link_to "Edit", edit_post_path(post), data: { turbo_frame: "post_#{post.id}" }, class: "text-blue-600" %>
+    <%= button_to "Delete", post_path(post), method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+  </div>
+</turbo-frame>
