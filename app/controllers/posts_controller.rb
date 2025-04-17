@@ -15,7 +15,10 @@ class PostsController < ApplicationController
         format.html { redirect_to posts_path, notice: "Post created." }
       end
     else
-      render :index
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to posts_path, notice: "Post not created." }
+      end
     end
   end
 
